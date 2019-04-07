@@ -27,3 +27,9 @@ gcc -Wall -I ./ -L ./ main.c -l nativeimpl
 ```sh
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:. ./a.out
 ```
+
+## call from golang
+
+```sh
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:. go run main.go
+```
