@@ -1,3 +1,6 @@
 *.h
 *.so
 **/*.class
+*.out
+
+.vscode
