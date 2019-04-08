@@ -17,4 +17,10 @@ func main() {
 	}
 	result := C.Java_org_pkg_apinative_Native_add(thread, 1, 2)
 	fmt.Println(result)
+
+	hello := C.GoString(C.Java_org_pkg_apinative_Native_hello(thread))
+	fmt.Println(hello)
+
+	repeat := C.GoString(C.Java_org_pkg_apinative_Native_rptstr(thread, C.CString("ABC"), 3))
+	fmt.Println(repeat)
 }

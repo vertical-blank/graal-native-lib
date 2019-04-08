@@ -10,4 +10,10 @@ int main(void) {
   }
   int result = Java_org_pkg_apinative_Native_add(thread, 1, 2);
   printf("%d\n", result);
+
+	char* hello = Java_org_pkg_apinative_Native_hello(thread);
+	printf("%s\n", hello);
+
+	char* repeat = Java_org_pkg_apinative_Native_rptstr(thread, "ABC", 3);
+	printf("%s\n", repeat);
 }
