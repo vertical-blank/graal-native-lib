@@ -3,5 +3,5 @@
 *.dylib
 **/*.class
 *.out
-
+main
 .vscode
