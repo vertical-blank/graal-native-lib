@@ -1,11 +1,16 @@
 # play with graal native shared
 
-## build java
+## requirements
 
-`.class` will be generated.
+- GraalVM is installed
+- set $GRAAL_HOME environment variable
+
+## compile java
+
+`.class` file will be generated to `.java` existing directory.
 
 ```sh
-javac -cp $GRAAL_HOME/jre/lib/boot/graal-sdk.jar org/pkg/implnative/NativeImpl.java
+javac -cp $GRAAL_HOME/jre/lib/boot/graal-sdk.jar java/org/pkg/implnative/NativeImpl.java
 ```
 
 ## compile native shared object
@@ -13,7 +18,7 @@ javac -cp $GRAAL_HOME/jre/lib/boot/graal-sdk.jar org/pkg/implnative/NativeImpl.j
 `.h`, `.so` (linux) or `.dylib` (mac) files will be generated.
 
 ```sh
-$GRAAL_HOME/bin/native-image --shared -H:Name=libnativeimpl
+$GRAAL_HOME/bin/native-image --shared -H:Name=libnativeimpl -cp java
 ```
 
 ## compile C code and link
@@ -21,7 +26,7 @@ $GRAAL_HOME/bin/native-image --shared -H:Name=libnativeimpl
 `-l` option must be after `.c` source file name.
 
 ```sh
-gcc -Wall -I ./ main.c -L ./ -l nativeimpl
+gcc -Wall -I ./ c/main.c -L ./ -l nativeimpl
 ```
 
 ## run
@@ -37,5 +42,5 @@ LD_LIBRARY_PATH=$LD_LIBRARY_PATH:. ./a.out
 set `LD_LIBRARY_PATH` is not necessary on mac.
 
 ```sh
-LD_LIBRARY_PATH=$LD_LIBRARY_PATH:. go run main.go
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:. go run go/main.go
 ```

@@ -3,8 +3,8 @@ package main
 /*
 #include <stdlib.h>
 #include <libnativeimpl.h>
-#cgo CFLAGS: -I ./
-#cgo LDFLAGS: -L ./ -lnativeimpl
+#cgo CFLAGS: -I ../
+#cgo LDFLAGS: -L ../ -lnativeimpl
 */
 import "C"
 import "fmt"
