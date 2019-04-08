@@ -1,10 +1,9 @@
 package main
 
 /*
-#include <stdlib.h>
 #include <libnativeimpl.h>
 #cgo CFLAGS: -I ../
-#cgo LDFLAGS: -L ../ -lnativeimpl
+#cgo LDFLAGS: -L ../ -lnativeimpl -Wl,-rpath=$ORIGIN/
 */
 import "C"
 import "fmt"

@@ -26,21 +26,25 @@ $GRAAL_HOME/bin/native-image --shared -H:Name=libnativeimpl -cp java
 `-l` option must be after `.c` source file name.
 
 ```sh
-gcc -Wall -I ./ c/main.c -L ./ -l nativeimpl
+gcc -Wall -I ./ c/main.c -L ./ -l nativeimpl -Wl,-rpath='$ORIGIN/'
 ```
 
-## run
-
-set `LD_LIBRARY_PATH` is not necessary on mac.
+## run C binary
 
 ```sh
-LD_LIBRARY_PATH=$LD_LIBRARY_PATH:. ./a.out
+./a.out
 ```
 
-## call from golang
+## build golang
 
-set `LD_LIBRARY_PATH` is not necessary on mac.
+golang 1.11 or later is required for `-Wl,-rpath` option.
 
 ```sh
-LD_LIBRARY_PATH=$LD_LIBRARY_PATH:. go run go/main.go
+go build go/main.go
+```
+
+## run golang binary
+
+```sh
+./main
 ```
