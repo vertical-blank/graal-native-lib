@@ -10,7 +10,7 @@
 `.class` file will be generated to `.java` existing directory.
 
 ```sh
-javac -cp $GRAAL_HOME/jre/lib/boot/graal-sdk.jar java/org/pkg/implnative/NativeImpl.java
+$GRAAL_HOME/bin/javac java/org/pkg/implnative/NativeImpl.java
 ```
 
 ## compile native shared object
