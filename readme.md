@@ -48,3 +48,11 @@ go build go/main.go
 ```sh
 ./main
 ```
+
+## run js 
+
+```
+cd js
+npm install
+node index.js
+```
