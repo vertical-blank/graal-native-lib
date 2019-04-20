@@ -22,4 +22,6 @@ func main() {
 
 	repeat := C.GoString(C.Java_org_pkg_apinative_Native_rptstr(thread, C.CString("ABC"), 3))
 	fmt.Println(repeat)
+
+	C.graal_tear_down_isolate(thread)
 }

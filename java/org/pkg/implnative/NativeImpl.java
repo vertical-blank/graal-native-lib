@@ -1,10 +1,10 @@
 package org.pkg.implnative;
 
-import org.graalvm.nativeimage.c.function.CEntryPoint;
 
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import org.graalvm.nativeimage.c.function.CEntryPoint;
 import org.graalvm.nativeimage.IsolateThread;
 import org.graalvm.nativeimage.c.type.CTypeConversion;
 import org.graalvm.nativeimage.c.type.CTypeConversion.CCharPointerHolder;

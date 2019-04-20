@@ -16,4 +16,6 @@ int main(void) {
 
   char* repeat = Java_org_pkg_apinative_Native_rptstr(thread, "ABC", 3);
   printf("%s\n", repeat);
+
+  graal_tear_down_isolate(thread);
 }

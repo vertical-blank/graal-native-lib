@@ -22,6 +22,9 @@ const libJava = ffi.Library('../libnativeimpl', {
       ref.refType(ref.types.CString),
       ref.types.int
     ]],
+    graal_tear_down_isolate: [
+      ref.types.int,
+      [ref.refType(ref.types.void)]],
 })
 
 const rc = libJava.graal_create_isolate(ref.NULL, ref.NULL, p_graal_isolatethread_t)
@@ -37,3 +40,5 @@ console.log(hello)
 
 const rep = libJava.Java_org_pkg_apinative_Native_rptstr(ref.deref(p_graal_isolatethread_t), ref.allocCString("Hello"), 10)
 console.log(rep)
+
+libJava.graal_tear_down_isolate(ref.deref(p_graal_isolatethread_t))
